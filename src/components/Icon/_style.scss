@@ -1,0 +1,7 @@
+
+
+@each $theme, $color in $theme-colors {
+  .icon-#{$theme} {
+    color: $color;
+  }
+}

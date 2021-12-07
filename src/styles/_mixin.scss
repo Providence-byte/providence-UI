@@ -1,0 +1,97 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $border-redius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-redius;
+}
+
+@mixin button-style(
+  $background,
+  $color,
+  $border,
+  $hover-background: lighten($background, 7.5%),
+  $hover-color: $color,
+  $hover-border: lighten($border, 10%)
+) {
+  background-color: $background;
+  color: $color;
+  border-color: $border;
+  &:hover {
+    background-color: $hover-background;
+    color: $hover-color;
+    border-color: $hover-border;
+  }
+  &:focus,
+  &.focus {
+    background-color: $hover-background;
+    color: $hover-color;
+    border-color: $hover-border;
+  }
+  &:disabled,
+  &.disabled {
+    background-color: $background;
+    color: $color;
+    border-color: $border;
+  }
+}
+
+@mixin alert-style($background, $color, $border) {
+  background-color: $background;
+  color: $color;
+  border-color: $border;
+  h5 {
+    color: $color;
+  }
+}
+
+@mixin zoom-in-animation(
+  $direction: "top",
+  $scaleStart: scaleY(0),
+  $scaleEnd: scaleY(1),
+  $origin: center top
+) {
+  // 进场动画
+  .zoom-in-#{$direction}-enter {
+    opacity: 0;
+    transform: $scaleStart;
+  }
+  .zoom-in-#{$direction}-enter-active {
+    opacity: 1;
+    transform: $scaleEnd;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
+      opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    //   动画开始的原点
+    transform-origin: $origin;
+  }
+
+  // 出场动画
+  .zoom-in-#{$direction}-exit {
+    opacity: 1;
+  }
+  .zoom-in-#{$direction}-exit-active {
+    opacity: 0;
+    transform: $scaleStart;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
+      opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    //   动画开始的原点
+    transform-origin: $origin;
+  }
+}
+
+@mixin zoom-out-animation(
+  $direction: "top",
+  $scaleStart: scaleY(1),
+  $scaleEnd: scaleY(0),
+  $origin: center top
+) {
+  .zoom-out-#{$direction}-exit {
+    opacity: 1;
+  }
+  .zoom-out-#{$direction}-exit-active {
+    opacity: 0;
+    transform: $scaleStart;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
+      opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    //   动画开始的原点
+    transform-origin: $origin;
+  }
+}

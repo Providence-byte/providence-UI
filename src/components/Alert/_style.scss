@@ -1,0 +1,48 @@
+.alert{
+    position: relative;
+    min-width: 300px;
+    max-width: 800px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    @include alert-style($white,$body-color,$gray-200);
+    font-weight: $alert-font-weight;
+    font-family: $alert-font-family;
+    color:$body-color;
+    background-image: none;
+    padding: $alert-padding-y $alert-padding-x;
+    border: $border-width solid transparent;
+    border-radius: $alert-border-radius;
+    line-height: $alert-line-height;
+    .alert-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            cursor: pointer;
+        }
+    }
+    h5{
+        margin-top: .25rem;
+        font-size: $alert-font-size-content;
+        font-weight: $alert-font-weight-content;
+        white-space:break-spaces;
+        vertical-align: middle;
+    }
+}
+// .alert-close{
+//     display: none;
+// }
+.alert-primary{
+    @include alert-style($primary,$white,$primary);
+}
+.alert-warning{
+    @include alert-style($warning,$body-color,$warning);
+}
+.alert-danger{
+    @include alert-style($danger,$white,$danger);
+}
+.alert-default{
+    @include alert-style($white,$body-color,$gray-200);
+}

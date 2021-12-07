@@ -1,0 +1,31 @@
+// sass中以 _ 开头的文件不会被编译到css文件,导入时不需要加下划线,
+// 只能作为模块导入，不能直接使用
+
+// config
+@import "variables";
+
+// layout normalize(css 初始化)
+@import "reboot";
+
+//mixin 混合（Mixin）用来分组那些需要在页面中复用的CSS声明
+// 示例：@mixin border-radius($radius){border-radius=$radius}
+// 然后在后续代码中通过@include border-radius(10px)使用该Mixin
+@import "mixin";
+
+// animation
+@import 'animation';
+
+// Button
+@import "../components/Botton/style";
+
+// Alert
+@import "../components/Alert/style";
+
+// Menu & MenuItem
+@import "../components/Menu/style";
+
+// Tabs
+@import '../components/Tabs/style';
+
+// Icon
+@import "../components/Icon/style";
