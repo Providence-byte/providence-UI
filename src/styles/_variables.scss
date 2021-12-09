@@ -88,7 +88,7 @@ $body-text-align:           null !default;
 // Spacing
 $spacer: 1rem !default;
 
-$headings-margin-bottom:      $spacer / 2 !default;
+$headings-margin-bottom:      calc($spacer / 2) !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
@@ -310,7 +310,7 @@ $input-transition:                      border-color .3s ease-in-out, box-shadow
 
 $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-200 !default;
-$input-group-addon-border-color:        $input-border-color !default;
+$input-border-width:        $input-border-color !default;
 
 // Progress bars
 

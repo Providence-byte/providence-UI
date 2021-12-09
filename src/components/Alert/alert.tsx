@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,BaseHTMLAttributes,FC } from "react";
 import classNames from "classnames";
 import Icon from "../Icon/icon";
 import Transition from "../Transition/transition";
@@ -14,9 +14,18 @@ interface BaseAlertProps {
 }
 
 export type AlertProps = BaseAlertProps &
-  React.BaseHTMLAttributes<HTMLDivElement>;
+  BaseHTMLAttributes<HTMLDivElement>;
 
-const Alert: React.FC<AlertProps> = (props) => {
+/** 用于页面中展示重要的提示信息。 点击右侧的叉提示自动消失
+ * 
+ * ### 引用方法
+ * 
+ * ~~~js
+ * 
+ * import { Alert } from 'providence'
+ * ~~~
+ */
+export const Alert: FC<AlertProps> = (props) => {
   const [close, setClose] = useState(true);
   const { alertType, title, isClose, content, className, ...restProps } = props;
   const classes = classNames("alert", className, {

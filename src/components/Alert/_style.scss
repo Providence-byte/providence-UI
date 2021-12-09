@@ -31,14 +31,11 @@
         vertical-align: middle;
     }
 }
-// .alert-close{
-//     display: none;
-// }
 .alert-primary{
     @include alert-style($primary,$white,$primary);
 }
 .alert-warning{
-    @include alert-style($warning,$body-color,$warning);
+    @include alert-style($warning,$white,$warning);
 }
 .alert-danger{
     @include alert-style($danger,$white,$danger);

@@ -9,7 +9,7 @@ const defaultProps = {
 
 const testProps: ButtonProps = {
   btnType: 'primary',
-  size: 'large',
+  size: 'lg',
   className: "kclass",
 };
 

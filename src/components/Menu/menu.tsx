@@ -21,7 +21,7 @@ interface IMenuContext {
 }
 // 创建一个Context对象，用interface约束，必须给默认值
 export const MenuContext = createContext<IMenuContext>({ index: "0" });
-const Menu: React.FC<BaseMenuProps> = (props) => {
+export const Menu: React.FC<BaseMenuProps> = (props) => {
   const { defaultIndex, mode, className, style, onSelect, children,defaultOpenSubMenu } = props;
   const [currentIndex, setCurrentIndex] = useState(defaultIndex);
   const classes = classNames("menu", className, {

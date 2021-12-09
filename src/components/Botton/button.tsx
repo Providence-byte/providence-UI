@@ -24,6 +24,15 @@ type AuchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 // Partial接收一个泛型，会将里面的属性都变为可选属性
 export type ButtonProps = Partial<NativeButtonProps & AuchorButtonProps>;
 
+/** 页面中最常用的的按钮元素，适合于完成特定的交互，支持 HTML button 和 a 链接 的所有属性
+ * 
+ * ###引用方法
+ * 
+ * ~~~js
+ * 
+ * import { Button } from 'providence'
+ * ~~~
+ */
 export const Button: FC<ButtonProps> = (props) => {
   const {
     disabled,

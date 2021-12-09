@@ -1,88 +1,101 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import { Story, Meta} from "@storybook/react";
+import { Button, ButtonProps } from "../Botton/button";
 import { action } from "@storybook/addon-actions";
-import {Button} from "./button";
 
-const styles: React.CSSProperties = {
-  margin: 0,
-  maxWidth: "800px",
+// 默认按钮
+export const Controls: Story<ButtonProps> = ({ ...props }) => (
+  <Button {...props} onClick={action("default clicked")}>
+    Controls Button
+  </Button>
+);
+Controls.storyName = "可控样式";
+
+Controls.args = {
+  btnType: "default",
+  size: "lg",
+  disabled: false,
+  className: "",
+  href: "",
 };
-
-// 局部装饰器
-const CSSDecorator = (storyFn: any) => <div style={styles}>{storyFn()}</div>;
-
-const defaultButton = () => (
-  <div style={{ margin: "20px 0" }}>
-    <Button onClick={action("clicked")}>default Button</Button>
+// 不同类型的按钮
+export const buttonWithType: Story<ButtonProps> = ({ ...props }) => (
+  <div
+    style={{ display: "flex", width: "500px", justifyContent: "space-between" }}
+  >
+    <Button btnType="primary" onClick={action("primary clicked")}>
+      Primary Button
+    </Button>
+    <Button btnType="danger" onClick={action("danger clicked")}>
+      Danger Button
+    </Button>
+    <Button btnType="link" href="http://www.baidu.com">
+      link Button
+    </Button>
   </div>
 );
+buttonWithType.storyName = "不同类型的按钮";
 
-const buttonWithSize = () => (
-  <>
-    <div style={{ margin: "20px 0" }}>
-      <Button onClick={action("clicked")} size="lg">
-        Large Button
-      </Button>
-    </div>
-    <Button onClick={action("clicked")} size="sm">
+buttonWithType.args = {
+  btnType: "primary",
+  disabled: false,
+  className: "",
+  href: "",
+};
+                                    
+
+export const buttonWithSize: Story<ButtonProps> = ({ ...props }) => (
+  <div>
+    <Button
+      size="lg"
+      onClick={action("primary clicked")}
+      style={{ marginRight: "20px" }}
+    >
+      Large Button
+    </Button>
+    <Button size="sm" onClick={action("danger clicked")}>
       Small Button
     </Button>
-  </>
+  </div>
 );
+buttonWithSize.storyName = "不同大小的按钮";
 
-const buttonWithType = () => (
-  <>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        width: "600px"
-      }}
-    >
-      <Button onClick={action("clicked")} btnType="default">
-        default Button
-      </Button>
-      <Button onClick={action("clicked")} btnType="primary">
-        primary Button
-      </Button>
-      <Button onClick={action("clicked")} btnType="danger">
-        danger Button
-      </Button>
-      <Button
-        onClick={action("clicked")}
-        btnType="link"
-        href="http://www.baidu.com"
-      >
-        link Button
-      </Button>
-    </div>
-  </>
-);
-
-storiesOf(" 按钮 ", module)
-  .addDecorator(CSSDecorator)
-  .addParameters({
-    info:{
-      text:`
-      <h3>何时使用</h3>
-
-      标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
-      
-      在 providence 中我们提供了三种大小按钮。
+buttonWithType.args = {
+  btnType: "default",
+  size: "lg",
+  disabled: false,
+  className: "",
+  href: "",
+};
+export default {
+  title: "component/Button",
+  component: Button,
+  argTypes: {
+    btnType: {
+      options: ["primary", "danger", "default","link"],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["sm", "lg"],
+      control: { type: "inline-radio" },
+    },
+    disabled: {
+      control: { type: "boolean" },
+    },
+    className: {
+      control: { type: "text" },
+    },
+    href: {
+      control: { type: "text" },
+    },
+  },
+  parameters: {
+    docs: {
+        description: {
+          story: `
+          在 providence 中我们提供了三种大小按钮。
           
-      以及四种状态属性与上面配合使用。
-      
-      危险：删除/移动/修改权限等危险操作，一般需要二次确认。
-      
-      主要：用于主行动点，一个操作区域只能有一个主按钮。
-      
-      禁用：行动点不可用的时候，一般需要文案解释。
-      
-      链接：一般用于链接，即导航至某位置。  
-
-      `
-    }
-  })
-  .add("默认按钮", defaultButton) //链式add方法会按顺序创建组件目录
-  .add("不同大小的按钮", buttonWithSize)
-  .add("不同类型的按钮", buttonWithType);
+         `
+        },
+      },
+  },
+} as Meta<typeof Button>;
