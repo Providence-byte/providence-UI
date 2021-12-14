@@ -25,6 +25,7 @@
     background-color: $hover-background;
     color: $hover-color;
     border-color: $hover-border;
+    outline: 5px double darken($hover-background, 5%);
   }
   &:disabled,
   &.disabled {

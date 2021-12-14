@@ -13,7 +13,7 @@
 @import "mixin";
 
 // animation
-@import 'animation';
+@import "animation";
 
 // Button
 @import "../components/Botton/style";
@@ -25,10 +25,22 @@
 @import "../components/Menu/style";
 
 // Tabs
-@import '../components/Tabs/style';
+@import "../components/Tabs/style";
 
 // Icon
 @import "../components/Icon/style";
 
 // Input
-@import "../components/Input/style"
+@import "../components/Input/style";
+
+// Autocomplete
+@import "../components/AutoComplete/style";
+
+// Select
+@import "../components/Select/style";
+
+// Upload
+@import '../components/Upload/style';
+
+// Progress
+@import '../components/Progress/style'

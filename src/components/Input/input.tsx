@@ -15,6 +15,7 @@ export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
   /** 是否禁用  */
   disabled?: boolean;
+  /** Input大小  */
   size?: InputSize;
   /** 表单上的图标  */
   icon?: IconProp;
@@ -26,6 +27,14 @@ export interface InputProps
 
 /**
  * Input 输入框 通过鼠标或键盘输入内容，是最基础的表单域的包装。
+ * 
+ * ### 引用方法
+ * 
+ * ~~~js
+ * 
+ * import { Icon } from 'providence'
+ * ~~~
+ * 
  *  */
 
 export const Input: FC<InputProps> = (props) => {

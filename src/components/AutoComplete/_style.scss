@@ -1,0 +1,30 @@
+.auto-complete {
+  position: relative;
+  .dropdown-list {
+    position: absolute;
+    top: 45px;
+    padding: 0;
+    width: 100%;
+    &.list-border {
+      border: $input-border-width solid $input-border-color;
+      border-radius: 0 0 $input-border-radius $input-border-radius;
+      box-shadow: $submenu-box-shadow;
+    }
+    .dropdown-item {
+      cursor: pointer;
+      width: 100%;
+      padding: $input-padding-y $input-padding-x;
+      list-style: none;
+      background-color: $white;
+      &.item-highlight {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+  .loading {
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+  }
+}

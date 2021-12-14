@@ -1,0 +1,24 @@
+@each $theme, $color in $theme-colors {
+  .progress-#{$theme} {
+    background-color: $color;
+  }
+}
+
+.progress-wrapper{
+  position: relative;
+  font-size: $progress-font-size;
+  .progress-outer{
+    background-color: $progress-bg;
+    border-radius: $progress-border-radius;
+    overflow: hidden;
+    .progess-inner{
+      height: 100%;
+      border-radius: $progress-border-radius;
+      color:$progress-bar-color;
+      transition:$progress-bar-transition;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  } 
+}

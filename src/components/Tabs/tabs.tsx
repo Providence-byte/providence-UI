@@ -24,7 +24,18 @@ export interface ITabsContext {
 type ITabsContent = React.ReactNode | null;
 
 export const TabsContext = createContext<ITabsContext>({ index: "0" });
-const Tabs: React.FC<TabsProps> = (props) => {
+
+/**选择不同的Tab项以展示不同的内容
+ * 
+ * ### 引用方法
+ * 
+ * ~~~js
+ * 
+ * import { Tabs,TabsItem  } from 'providence'
+ * ~~~
+ * */  
+
+export const Tabs: React.FC<TabsProps> = (props) => {
   const { defaultIndex, onSelect, type, className, style, children,contentClass } = props;
   const [currentIndex, setCurrentIndex] = useState(defaultIndex);
   // 这段代码是 迫不得已之举 请谨慎使用

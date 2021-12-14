@@ -20,14 +20,59 @@ Controls.args = {
   defaultIndex: "0",
   className: "",
 };
-Controls.parameters = {
-  docs: {
-    description: {
-      story: `
-        在 providence 中我们提供了三种Alert。
-  `,
-    },
-  },
+
+export const menuWithMode: Story<BaseMenuProps> = ({ ...props }) => (
+  <div>
+    <Menu mode="horizontal" {...props}>
+      <MenuItem>link 1</MenuItem>
+      <MenuItem>link 2</MenuItem>
+      <MenuItem>link 3</MenuItem>
+    </Menu>
+    <br />
+    <Menu mode="vertical" {...props}>
+      <MenuItem>link 1</MenuItem>
+      <MenuItem>link 2</MenuItem>
+      <MenuItem>link 3</MenuItem>
+    </Menu>
+  </div>
+);
+menuWithMode.storyName = "不同模式的菜单";
+
+menuWithMode.args = {
+  defaultIndex: "0",
+  className: "",
+};
+
+export const menuWithSubmenu: Story<BaseMenuProps> = ({ ...props }) => (
+  <div>
+    <Menu mode="horizontal" {...props}>
+      <MenuItem>link 1</MenuItem>
+      <MenuItem>link 2</MenuItem>
+      <MenuItem>link 3</MenuItem>
+      <SubMenu title="下拉菜单">
+        <MenuItem>drop 1</MenuItem>
+        <MenuItem>drop 2</MenuItem>
+        <MenuItem>drop 3</MenuItem>
+      </SubMenu>
+    </Menu>
+    <br />
+    <Menu mode="vertical" {...props}>
+      <MenuItem>link 1</MenuItem>
+      <MenuItem>link 2</MenuItem>
+      <MenuItem>link 3</MenuItem>
+      <SubMenu title="下拉菜单">
+        <MenuItem>drop 1</MenuItem>
+        <MenuItem>drop 2</MenuItem>
+        <MenuItem>drop 3</MenuItem>
+      </SubMenu>
+    </Menu>
+  </div>
+);
+menuWithSubmenu.storyName = "带有二级菜单";
+
+menuWithSubmenu.args = {
+  defaultIndex: "0",
+  className: "",
 };
 
 export default {
@@ -43,15 +88,6 @@ export default {
     },
     className: {
       control: { type: "text" },
-    },
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: `
-              在 providence 中我们提供了三种大小按钮。
-              `,
-      },
     },
   },
 } as Meta<typeof Menu>;

@@ -1,0 +1,61 @@
+.upload-file-list {
+  list-style: none;
+  padding: $btn-padding-y-sm 0;
+  min-width: 300px;
+  .upload-file-list-item {
+    display: flex;
+    flex-direction: column;
+    .file-item-content {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      padding-right: 5px;
+      .file-name {
+        span {
+          margin-left: 8px;
+        }
+      }
+      .file-name.file-name-error {
+        span {
+          color: $danger;
+        }
+      }
+      .file-remove {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 30px;
+        text-align: right;
+        margin-right: 8px;
+      }
+      &:hover {
+        background-color: $gray-200;
+        .file-status {
+          display: none;
+        }
+        .file-remove {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.upload-drag {
+  padding: $drag-padding-y $drag-padding-x;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: $drag-border;
+  background-color: $gray-200;
+  &.is-dragger {
+    transition: all 0.3s;
+    color: $primary;
+    border: $drag-over-border;
+    background-color: lighten($primary, 40%);
+  }
+}

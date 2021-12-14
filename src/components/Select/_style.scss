@@ -1,0 +1,79 @@
+.select {
+  position: relative;
+  .select-input {
+    input {
+      background-color: $white !important;
+    }
+  }
+  .icon-wrapper {
+    position: absolute;
+    display: inline-block;
+    width: 45px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .arrow-icon {
+      transition: transform 0.5s;
+      transform: rotate(0deg) !important;
+    }
+  }
+  .select-dropdown {
+    position: absolute;
+    top: 45px;
+    padding: 0;
+    width: 100%;
+    border: $input-border-width solid $input-border-color;
+    border-radius: 0 0 $input-border-radius $input-border-radius;
+    box-shadow: $submenu-box-shadow;
+    .option-item {
+      cursor: pointer;
+      user-select: none;
+      width: 100%;
+      padding: $input-padding-y $input-padding-x;
+      list-style: none;
+      background-color: $white;
+      &:hover {
+        color: $menu-item-active-color;
+      }
+      &.is-active {
+        color: $menu-item-active-color;
+      }
+      &.is-disabled{
+        color: $menu-item-disabled-color;
+        pointer-events: none;
+      }
+    }
+  }
+  .selected-list {
+    position: absolute;
+    max-width: calc(100% - 45px);
+    height: 40px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 5px;
+    list-style: none;
+    .selected-item{
+        background-color: lighten($primary, 40%);
+        color: $primary;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+        line-height: 20px;
+        .cancel-select{
+          margin-left: 5px;
+        }
+    }
+  }
+}
+.select.option-open {
+  .icon-wrapper {
+    .arrow-icon {
+      transition: transform 0.5s;
+      transform: rotate(180deg) !important;
+    }
+  }
+}

@@ -43,18 +43,9 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
       }
     });
     return (
-      // <CSSTransition
-      //   in={menuOpen}
-      //   timeout={300}
-      //   classNames="zoom-in-top"
-      //   unmountOnExit
-      //   appear
-      // >
       <Transition in={menuOpen} timeout={300} animation='zoom-in-top'>
         <ul className={classes}>{childrenComponent}</ul>
       </Transition>
-
-      // </CSSTransition>
     );
   };
   const handleClick = (e: React.MouseEvent) => {

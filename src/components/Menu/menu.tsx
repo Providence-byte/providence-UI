@@ -21,6 +21,19 @@ interface IMenuContext {
 }
 // 创建一个Context对象，用interface约束，必须给默认值
 export const MenuContext = createContext<IMenuContext>({ index: "0" });
+/** 
+ * 为网站提供导航功能的菜单。支持横向纵向两种模式，支持下拉菜单。
+ * 
+ * ### 引用方法
+ * 
+ * ~~~js
+ * 
+ * import { Menu } from 'providence'
+ * import { MenuItem } from 'providence'
+ * import { SubMenu } from 'providence'
+ * ~~~
+ * 
+ * */  
 export const Menu: React.FC<BaseMenuProps> = (props) => {
   const { defaultIndex, mode, className, style, onSelect, children,defaultOpenSubMenu } = props;
   const [currentIndex, setCurrentIndex] = useState(defaultIndex);
