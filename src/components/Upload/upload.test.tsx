@@ -2,7 +2,6 @@ import {
   render,
   fireEvent,
   waitFor,
-  screen,
   RenderResult,
   createEvent
 } from "@testing-library/react";

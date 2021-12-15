@@ -47,7 +47,6 @@ export const Select: FC<SelectProps> = (props) => {
     placeholder,
     disabled,
     multiple,
-    name,
     onChange,
     onVisibleChange,
     className,

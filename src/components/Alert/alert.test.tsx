@@ -41,7 +41,6 @@ describe("test Alert component", () => {
   });
   test("should render the correct close button", () => {
     const wrapper = render(<Alert isClose></Alert>);
-    const { container } = wrapper;
     // 关闭按钮存在
     const element = wrapper.getByTestId("test close");
     expect(element).toBeInTheDocument();

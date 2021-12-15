@@ -1,23 +1,9 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);
 function App() {
-  const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   // axios get请求第二个参数为config，post请求第二个参数为data，第三个参数为config
-  //   axios
-  //     .get("https://jsonplaceholder.typicode.com/todos/1", {
-  //       headers: {
-  //         "X-Requested-With": "XMLHttpResquest",
-  //       },
-  //       responseType:'json'
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     });
-  // }, []);
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     // 获取fileList,类数组对象
     const files = e.target.files;

@@ -6,8 +6,8 @@ import {
   waitFor,
 } from "@testing-library/react";
 import Menu, { BaseMenuProps } from "./menu";
-import MenuItem, { BaseMenuItemProps } from "./menuitem";
-import SubMenu, { SubMenuProps } from "./submenu";
+import MenuItem from "./menuitem";
+import SubMenu from "./submenu";
 jest.mock('../Icon/icon', () => {
   return () => {
     return <i className="fa" />

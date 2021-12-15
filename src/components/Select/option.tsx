@@ -10,7 +10,7 @@ export interface OptionProps {
 }
 
 const Option: FC<OptionProps> = (props) => {
-  const { disabled, value, label, index, className } = props;
+  const { disabled, value, index, className } = props;
   const context = useContext(SelectContext);
   const classes = classNames("option-item", className, {
     "is-disabled": disabled,

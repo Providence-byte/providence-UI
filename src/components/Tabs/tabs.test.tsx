@@ -1,6 +1,6 @@
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 import Tabs, { TabsProps } from "./tabs";
-import TabsItem, { TabsItemProps } from "./tabsitem";
+import TabsItem from "./tabsitem";
 jest.mock("../Icon/icon", () => {
   return () => {
     return <i className="fa" />;
@@ -18,12 +18,7 @@ const testProps: TabsProps = {
   type: "line",
   className: "test",
 };
-const testCardProps: TabsProps = {
-  defaultIndex: "0",
-  type: "card",
-  className: "test",
-  onSelect:jest.fn()
-};
+
 
 const NewTabs = (props: TabsProps) => {
   return (
@@ -42,8 +37,8 @@ const NewTabs = (props: TabsProps) => {
 let wrapper: RenderResult,
   tabsElement: HTMLElement,
   activeElement: HTMLElement,
-  tabsItems: HTMLElement[],
-  iconContent:HTMLElement
+  tabsItems: HTMLElement[]
+
 describe("test Tabs component", () => {
   beforeEach(() => {
     wrapper = render(NewTabs(testProps));

@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react";
 import Menu, { BaseMenuProps } from "./menu";
-import MenuItem, { BaseMenuItemProps } from "./menuitem";
-import SubMenu, { SubMenuProps } from "./submenu";
+import MenuItem from "./menuitem";
+import SubMenu from "./submenu";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);

@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react";
 import { action } from "@storybook/addon-actions"
 import { Select, SelectProps } from "./select";
-import Option,{OptionProps} from "./option";
+import Option from "./option";
 
 export const Controls: Story<SelectProps> = ({ ...props }) => (
   <div style={{ width: "450px" }}>

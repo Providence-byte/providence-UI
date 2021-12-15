@@ -1,12 +1,8 @@
-import { Meta } from '@storybook/addon-docs';
 
-<Meta title="欢迎来到providence组件库" />
 
-### 组件演示
+## 欢迎来到 providence-byte-ui 组件库
 
-## 欢迎来到 providence 组件库
-
-### 使用 REACT+TYPESCRIPT 从零到一打造一套你自己的组件库
+### 使用 REACT+TYPESCRIPT 从零到一打造一套属于自己的组件库
 
 providence 使用 React Hooks 和 typescript
 

@@ -16,14 +16,14 @@ const defaultFileList: UploadFile[] = [
   { uid: "121", size: 1234, name: "eyiha.md", status: "error", percent: 30 },
 ];
 
-const checkUploadSize = (file: File) => {
-  if (Math.round(file.size / 1024) > 50) {
-    alert("file too much");
-    return false;
-  } else {
-    return true;
-  }
-};
+// const checkUploadSize = (file: File) => {
+//   if (Math.round(file.size / 1024) > 50) {
+//     alert("file too much");
+//     return false;
+//   } else {
+//     return true;
+//   }
+// };
 const filePromise = (file: File) => {
   const newFile = new File([file], "new_name.docx", { type: file.type });
   return Promise.resolve(newFile);
