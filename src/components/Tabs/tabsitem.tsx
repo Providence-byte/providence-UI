@@ -16,7 +16,6 @@ export interface TabsItemProps {
 const TabsItem: React.FC<TabsItemProps> = (props) => {
   const context = useContext(TabsContext);
   const { index, title, disabled, className, style, children, icon } = props;
-  console.log(children);
   const classes = classNames("tabs-item", className, {
     "is-active": context.index === index,
     "is-disabled": disabled,

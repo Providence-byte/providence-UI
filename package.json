@@ -47,12 +47,9 @@
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css --output-style compressed -o dist/css/ scss --recursive",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublish": "yarn test:nowatch && yarn lint && yarn build"
-  },
-  "husky":{
-    "hooks":{
-      "pre-commit":"yarn test:nowatch && yarn lint"
-    }
+    "prepare": "husky install",
+    "prepublishOnly": "pinst --disable && yarn test:nowatch && yarn lint && yarn build",
+    "postpublish": "pinst --enable"
   },
   "eslintConfig": {
     "extends": [

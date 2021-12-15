@@ -159,7 +159,7 @@ export const Upload: FC<UploadProps> = (props) => {
         },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         updateFileList(_file, { status: "success", response: res.data });
         if (onSuccess) {
           onSuccess(res.data, file);
