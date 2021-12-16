@@ -15,7 +15,7 @@ interface IFuncArgs {
 }
 jest.mock("../Icon/icon", () => {
   return ({ icon, onClick }:IFuncArgs) => {
-    console.log(icon); //可以打印出icon的名字
+    // console.log(icon); //可以打印出icon的名字
     return <span onClick={onClick}>{icon}</span>;
   };
 });
