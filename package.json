@@ -20,7 +20,7 @@
     "directory": "https://github.com/Providence-byte/providence-UI"
   },
   "files": [
-    "build"
+    "dist"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
